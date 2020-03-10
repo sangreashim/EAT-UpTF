@@ -5,7 +5,7 @@ import scipy.stats as st
 from statsmodels.stats.multitest import multipletests as mt
 import argparse
 parser  = argparse.ArgumentParser(description="cistrome Enrichment analysis tool for Group of Genes (cisEGG) : conduct enrichment analysis of cistrome using DAP-seq (O'Malley et al 2016) and provide putative transcription factor for specific gene group of interest")
-parser.add_argument('--cistrome', help='database file of cistrome', type=argparse.FileType('r'))
+parser.add_argument('--cistrome', help='database file of cistrome', default='interaction_DAPseq.txt', type=argparse.FileType('r'))
 parser.add_argument('--gene_group', help='file containing group of genes', type=argparse.FileType('r'))
 parser.add_argument('--num_ref_genes','-N', help='No. of total genes in reference genome, default=27206 for Arabidopsis thaliana', default=27206.0, type=float)
 parser.add_argument('--model', help='statistical model: HG=hypergeometric test, BN=binomial test, default=HG', default='HG', type=str)
