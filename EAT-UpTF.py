@@ -4,14 +4,14 @@ import sys
 import scipy.stats as st
 from statsmodels.stats.multitest import multipletests as mt
 import argparse
-parser  = argparse.ArgumentParser(description="cistrome Enrichment analysis tool for Group of Genes (cisEGG) : conduct enrichment analysis of cistrome using DAP-seq (O'Malley et al 2016) and provide putative transcription factor for specific gene group of interest")
+parser  = argparse.ArgumentParser(description="Enrichment Analysis Tool for Upstream Transcription Factor of a gene set (EAT-UpTF) : conduct enrichment analysis of upstream transcription factor for a gene set of interest.")
 parser.add_argument('--cistrome', help='database file of cistrome', default='interaction_DAPseq.txt', type=argparse.FileType('r'))
 parser.add_argument('--gene_group', help='file containing group of genes', type=argparse.FileType('r'))
 parser.add_argument('--num_ref_genes','-N', help='No. of total genes in reference genome, default=27206 for Arabidopsis thaliana', default=27206.0, type=float)
 parser.add_argument('--model', help='statistical model: HG=hypergeometric test, BN=binomial test, default=HG', default='HG', type=str)
 parser.add_argument('--post_hoc', help='post hoc analysis: bonferroni=Bonferroni family-wise error rate correction, fdr_bh=Benjamini & Hochberg False Discover Rate correction, default=fdr_bh', default='fdr_bh', type=str)
 parser.add_argument('--alpha', help='alpha in post hoc analysis, default:0.05', default=0.05, type=float)
-parser.add_argument('--output', help='output file name', default='cisEGG.output', type=argparse.FileType('w'))
+parser.add_argument('--output', help='output file name', default='EAT-UpTF.output', type=argparse.FileType('w'))
 parser.add_argument('--alias', help='gene alias file, default=NA', default='NA', type=str)
 args = parser.parse_args()
 
