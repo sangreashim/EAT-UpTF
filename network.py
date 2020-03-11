@@ -6,8 +6,8 @@ import argparse
 import os
 parser  = argparse.ArgumentParser(description="Module to create transcriptional regulatory network")
 parser.add_argument('--cistrome', help='database file of cistrome', type=argparse.FileType('r'))
-parser.add_argument('--gene_group', help='file containing group of genes', type=argparse.FileType('r'))
-parser.add_argument('--TFs', help='file containing gene IDs (AGI) of transcription factors of interest', type=argparse.FileType('r'))
+parser.add_argument('--gene_group', help='file containing group of genes (new line delimited)', type=argparse.FileType('r'))
+parser.add_argument('--TFs', help='file containing gene IDs (AGI) of transcription factors of interest (new line delimited AGI ID)', type=argparse.FileType('r'))
 parser.add_argument('--output', help='output file name', default='cisEGG.output', type=argparse.FileType('w'))
 args = parser.parse_args()
 
