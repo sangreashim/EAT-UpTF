@@ -78,26 +78,43 @@ python3 network.py --cistrome interaction_DAPseq.txt --gene_group test_set_LHY_C
   
   # How to customize database
   
-  EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be added manually as following example.
+  EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be added manually as following example. The fisrt and second columns represent TF and target genes, respectively. The two columns must be delimited by <b>TAB</b>.
 
 
 AT5G60130       AT1G01010
+
 AT5G60130       AT1G01030
+
 AT5G60130       AT1G01040
+
 AT5G60130       AT1G01070
+
 AT5G60130       AT1G01073
+
 AT5G60130       AT1G01110
+
 AT5G60130       AT1G01120
+
 AT5G60130       AT1G01140
+
 ....
+
 AT3G28920       AT5G67350
+
 AT3G28920       AT5G67360
+
 AT3G28920       AT5G67370
+
 AT3G28920       AT5G67390
+
 AT3G28920       AT5G67411
+
 AT3G28920       AT5G67420
+
 AT3G28920       AT5G67430
+
 AT3G28920       AT5G67455
+
 AT3G28920       AT5G67460
 
 
