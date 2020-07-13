@@ -18,12 +18,12 @@ Statsmodels (>= 0.11.1)
 
 <b>Upstream TF enrichment analysis:</b>
 
-python3 EAT-UpTF.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIPseq.txt --model HG --post_hoc fdr_bh --alpha 0.05 --alias gene_aliases_20140331.txt
+	python3 EAT-UpTF.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIPseq.txt --model HG --post_hoc fdr_bh --alpha 0.05 --alias gene_aliases_20140331.txt
 
 
 <b>Transcriptional regulatory network:</b>
 
-python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIPseq.txt --TFs TFs.txt > TRN.txt
+	python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIPseq.txt --TFs TFs.txt > TRN.txt
 
 # Parameters for EAT-UpTF
 
@@ -110,19 +110,21 @@ TF_A.narrowPeak.u1000_d500.annotation file contains TF and target gene ID for fi
 
 Example of TF_A.narrowPeak.u1000_d500.annotation
 
-	GENE_ID_of_TF_A   AT1G01453
-	GENE_ID_of_TF_A   AT1G01471
-	GENE_ID_of_TF_A   AT1G01540
-	GENE_ID_of_TF_A   AT1G01800
-	GENE_ID_of_TF_A   AT1G01930
-	GENE_ID_of_TF_A   AT1G01980
-	GENE_ID_of_TF_A   AT1G02100
-	GENE_ID_of_TF_A   AT1G02160
-	GENE_ID_of_TF_A   AT1G02180
-	GENE_ID_of_TF_A   AT1G02370
-	GENE_ID_of_TF_A   AT1G02410
-	GENE_ID_of_TF_A   AT1G02710
-
+	AT5G65130       AT1G01453
+	AT5G65130       AT1G01471
+	AT5G65130       AT1G01540
+	AT5G65130       AT1G01800
+	AT5G65130       AT1G01930
+	AT5G65130       AT1G01980
+	AT5G65130       AT1G02100
+	AT5G65130       AT1G02160
+	AT5G65130       AT1G02180
+	AT5G65130       AT1G02370
+	AT5G65130       AT1G02410
+	AT5G65130       AT1G02710
+	AT5G65130       AT1G02810
+	AT5G65130       AT1G03130
+	AT5G65130       AT1G03160
 
   <b>3. Conduct step1 and 2 for other TFs (B, C, D, ...........................). </b>
 
