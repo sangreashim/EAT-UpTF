@@ -14,6 +14,8 @@ SciPy (>= 1.4.1)
 
 Statsmodels (>= 0.11.1)
 
+bedtools (should be included in default path, see https://bedtools.readthedocs.io/en/latest/) 
+
 # Synopsis
 
 <b>Upstream TF enrichment analysis:</b>
