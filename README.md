@@ -80,7 +80,7 @@ python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIP
   
   EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be added manually as following example.
   
-  1. Annotate ChIP-/DAP-seq peaks based on the genome annotation for species of interest. 
+  <b>1. Annotate ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
   
 Genome annotation BED file
 
