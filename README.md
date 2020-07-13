@@ -18,12 +18,12 @@ Statsmodels (>= 0.11.1)
 
 <b>Upstream TF enrichment analysis:</b>
 
-python3 EAT-UpTF.py --cistrome interaction_DAPseq.txt --gene_group test_set_LHY_ChIPseq.txt --model HG --post_hoc fdr_bh --alpha 0.05 --alias gene_aliases_20140331.txt
+python3 EAT-UpTF.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIPseq.txt --model HG --post_hoc fdr_bh --alpha 0.05 --alias gene_aliases_20140331.txt
 
 
 <b>Transcriptional regulatory network:</b>
 
-python3 network.py --cistrome interaction_DAPseq.txt --gene_group test_set_LHY_ChIPseq.txt --TFs TFs.txt > TRN.txt
+python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIPseq.txt --TFs TFs.txt > TRN.txt
 
 # Parameters for EAT-UpTF
 
