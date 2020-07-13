@@ -27,51 +27,51 @@ Statsmodels (>= 0.11.1)
 
 # Parameters for EAT-UpTF
 
-  --cistrome file         
-  database file of cistrome
+  	--cistrome file         
+  	database file of cistrome
   
-  --gene_group file       
-  file containing group of genes (new line delimited)
+  	--gene_group file       
+  	file containing group of genes (new line delimited)
   
-  --num_ref_genes int     
-  No. of total genes in reference genome, 
-  default=27206 for Arabidopsis thaliana
+  	--num_ref_genes int     
+  	No. of total genes in reference genome, 
+  	default=27206 for Arabidopsis thaliana
   
-  --model str             
-  statistical model: 
-  HG=hypergeometric test, 
-  BN=binomial test, 
-  default=HG
+  	--model str             
+  	statistical model: 
+  	HG=hypergeometric test, 
+  	BN=binomial test, 
+  	default=HG
   
-  --post_hoc str          
-  post hoc analysis: 
-  bonferroni=Bonferroni family-wise error rate correction, 
-  fdr_bh=Benjamini & Hochberg False Discover Rate correction, 
-  default=fdr_bh
+  	--post_hoc str          
+  	post hoc analysis: 
+  	bonferroni=Bonferroni family-wise error rate correction, 
+  	fdr_bh=Benjamini & Hochberg False Discover Rate correction, 
+  	default=fdr_bh
   
-  --alpha float: 0<=x<=1  
-  alpha in post hoc analysis, 
-  default:0.05
+  	--alpha float: 0<=x<=1  
+  	alpha in post hoc analysis, 
+  	default:0.05
   
-  --output file           
-  output file name
+  	--output file           
+  	output file name
   
-  --alias file           
-  gene alias file, 
-  default=NA,
-  gene_aliases_20140331.txt file can be downloaded from TAIR webpage
+  	--alias file           
+  	gene alias file, 
+  	default=NA,
+  	gene_aliases_20140331.txt file can be downloaded from TAIR webpage
 
 
 # Trnascriptional regulatory network construction
 
-  --cistrome 
-  database file of cistrome 
+  	--cistrome 
+  	database file of cistrome 
   
-  --gene_group 
-  file containing group of genes (new line delimited)
+  	--gene_group 
+  	file containing group of genes (new line delimited)
   
-  --TFs 
-  file containing group of TFs (new line delimited AGI ID)
+  	--TFs 
+  	file containing group of TFs (new line delimited AGI ID)
   
   <b>Subject output file (eg. TRN.txt) to cytoscape for construction of TRN.</b>
   
