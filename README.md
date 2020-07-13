@@ -127,7 +127,29 @@ Example of TF_A.narrowPeak.u1000_d500.annotation
 	AT5G65130       AT1G03130
 	AT5G65130       AT1G03160
 
-  <b>Step 3. Conduct step1 and 2 for other TFs (B, C, D, ...........................). </b>
+  <b>Step 3. For multiple TFs, conduct step1 and 2 for other TFs. </b>
+  
+  Or alternatively, 
+  
+  	command line: python construct_manual_database.py <file_containing_list_of_TFID_and_file_name_of_narrowPeak> <genome_annotation_BED_file> <upstream_length> <downstream_length> <column_for_target_geneID> <column_for_distance> <column_for_left_position_of_TF_peak>
+	
+  In this example, 4th, 17th and 8th columns contain target geneID, distance from gene to TF peak and left position of TF peak. Therefore, following command line will be properly worked.
+  
+	Example: python construct_manual_database.py TFID_and_FileName.txt Athaliana_167_TAIR10.gene.bed 1000 500 4 17 8
+	
+  Example of TFID_and_FileName.txt
+  
+  	AT1G19000	At1g19000_col_a.narrowPeak
+	AT1G19210	At1g19210_col_a.narrowPeak
+	AT1G22810	At1g22810_col.narrowPeak
+	AT1G25550	At1g25550_col.narrowPeak
+	AT1G36060	At1g36060_col_a.narrowPeak
+	AT1G49010	At1g49010_col_a.narrowPeak
+	AT1G64620	At1g64620_100ng20cy_b.narrowPeak
+	AT1G68670	At1g68670_col.narrowPeak
+	AT1G69690	At1g69690_col_a.narrowPeak
+	AT1G72010	At1g72010_col.narrowPeak
+	AT5G65130	At5g65130_col_a.narrowPeak.sorted
   
 
   <b>Step 4. Concatenate all annotation files into one txt file.</b>
