@@ -129,9 +129,9 @@ Example of TF_A.narrowPeak.u1000_d500.annotation
 	AT5G65130       AT1G03130
 	AT5G65130       AT1G03160
 
-  <b>Step 3. For multiple TFs, conduct step1 and 2 for other TFs. </b>
+  <b>Step 3. Conduct Step 1 and 2 for multiple TFs. </b>
   
-  Or alternatively, 
+  Or alternatively, execute following command line.
   
   	command line: python construct_manual_database.py <file_containing_list_of_TFID_and_file_name_of_narrowPeak> <genome_annotation_BED_file> <upstream_length> <downstream_length> <column_for_target_geneID> <column_for_distance> <column_for_left_position_of_TF_peak>
 	
@@ -160,4 +160,7 @@ Example of TF_A.narrowPeak.u1000_d500.annotation
   
   
   <b>Step 5. Use ALL_TFs.narrowPeak.u1000_d500.annotation for --cistrome argument.</b>
+  
+  	command line example: python3 EAT-UpTF.py --cistrome ALL_TFs.narrowPeak.u1000_d500.annotation --gene_group test_set_LHY_ChIPseq.txt --model HG --post_hoc fdr_bh --alpha 0.05 --alias gene_aliases_20140331.txt
+
   
