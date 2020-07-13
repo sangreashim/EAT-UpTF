@@ -13,5 +13,5 @@ for x in tfID_fileName_list:
     cell    = x.strip().split()
     tfID    = cell[0].strip()
     fileName    = cell[1].strip()
-    os.system("bedtools closest -a "+ genome_annotation_file +" -b "+ fileName +" -D a > "+ fileName +".annotation ; awk '$"+ distance_column +"<="+ downstream +" && $"+ distance_column +">=-"+ upstream +"' "+ fileName +".annotation | awk '$"+ peak_left +"!=-1' | cut -f "+ gene_ID_column +" | sort -u | sed 's/$/\t"+ tfID +"/' | paste - - | cut -f 2,3 > "+ fileName +".u1000_d500.annotation")
+    os.system("bedtools closest -a "+ genome_annotation_file +" -b "+ fileName +" -D a > "+ fileName +".annotation ; awk '$"+ distance_column +"<="+ downstream +" && $"+ distance_column +">=-"+ upstream +"' "+ fileName +".annotation | awk '$"+ peak_left +"!=-1' | cut -f "+ gene_ID_column +" | sort -u | sed 's/$/\t"+ tfID +"/' | paste - - | cut -f 2,3 > "+ fileName +".u"+ upstream +"_d"+ downstream +".annotation")
 
