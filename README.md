@@ -85,27 +85,17 @@ python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIP
 	command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation </b>
 
 	
-	Example of TF_A.narrowPeak.annotation
+Example of TF_A.narrowPeak.annotation
 	chr1    3631    5899    AT1G01010       .       +       chr1    20916   21117   1:21016 146     .       34.3    0.00    20.56   100     15018
-
 	chr1    5928    8737    AT1G01020       .       -       chr1    20916   21117   1:21016 146     .       34.3    0.00    20.56   100     -12180
-
 	chr1    11649   13714   AT1G01030       .       -       chr1    20916   21117   1:21016 146     .       34.3    0.00    20.56   100     -7203
-
 	chr1    23146   31227   AT1G01040       .       +       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     -1912
-
 	chr1    31170   33153   AT1G01050       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     9936
-
 	chr1    33379   37871   AT1G01060       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     12145
-
 	chr1    38752   40944   AT1G01070       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     17518
-
 	chr1    44677   44787   AT1G01073       .       +       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     -23443
-
 	chr1    45296   47019   AT1G01080       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     24062
-
 	chr1    47485   49286   AT1G01090       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     26251
-
 	chr1    50075   51199   AT1G01100       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     28841
 
 
