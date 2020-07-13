@@ -83,8 +83,7 @@ python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIP
   <b>1. Annotate ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
   
 	command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation </b>
-	
-	
+
 	
 	Example of TF_A.narrowPeak.annotation
 	chr1    3631    5899    AT1G01010       .       +       chr1    20916   21117   1:21016 146     .       34.3    0.00    20.56   100     15018
