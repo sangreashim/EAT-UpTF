@@ -23,16 +23,16 @@ for x in args.cistrome.readlines():
 
 gene_set   = set([x.strip() for x in args.gene_group.readlines()])
 gene_stack  = []
-print('Source'+'\t'+'InteractionType'+'\t'+'Target'+'\t'+'Val')
+args.output.write('Source'+'\t'+'InteractionType'+'\t'+'Target'+'\t'+'Val'+'\n')
 for tf in [x.strip() for x in args.TFs.readlines()]:
     target_set = set(cistrome_dic[tf])
     intersection_list    = list(gene_set.intersection(target_set))
     gene_stack += intersection_list
     for target in intersection_list:
-        print(tf +'\t'+ 'pd' +'\t'+ target +'\t'+ 'True')
+        args.output.write(tf +'\t'+ 'pd' +'\t'+ target +'\t'+ 'True'+'\n')
 
 for off_target in list(gene_set-set(gene_stack)):
-        print(off_target)
+        args.output.write(off_target+'\n')
 
     
 
