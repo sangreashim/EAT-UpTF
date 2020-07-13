@@ -82,7 +82,7 @@ python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIP
   
   1. Annotate ChIP-/DAP-seq peaks based on the genome annotation for species of interest. 
   
------------------------------ Genome annotation BED file --------------------------------------------------
+Genome annotation BED file
 
 chromosome  left_position right_position  Gene_ID Source  Orientiation
 
@@ -104,11 +104,9 @@ chr1    44677   44787   AT1G01073       .       +
 
 chr1    45296   47019   AT1G01080       .       -
 
-..........................
------------------------------------------------------------------------------------------------------------
 
 
------------------------------ Peak BED file --------------------------------------------------
+Peak BED file
 
 chr1    20916   21117   1:21016 146     .       34.3    0.00    20.56   100
 
@@ -128,13 +126,13 @@ chr1    196064  196265  1:196164        114     .       11.0    0.00    2.49    
 
 chr1    222692  222893  1:222792        120     .       15.0    0.00    3.90    100
 
-..............................
-----------------------------------------------------------------------------------------------
-  
+
+
   
 Command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation 
-  
---------------------------------- TF_A.narrowPeak.annotation ---------------------------------
+
+
+TF_A.narrowPeak.annotation
 
 chr1    3631    5899    AT1G01010       .       +       chr1    20916   21117   1:21016 146     .       34.3    0.00    20.56   100     15018
 
@@ -166,8 +164,11 @@ Output file contains genomic coordinates of genes and peak location along with d
 
 
   2. To annotate genes for ChIP-/DAP-seq peaks considering 1000 bp upstream and 500 bp downstream regions, following command needed.
+  
 
 Command line: awk '$17<=500 && $17>=-1000' TF_A.narrowPeak.annotation | awk '$8!=-1 && $8!=-1' | cut -f 4 | sort -u | sed 's/$/\tAT5G65130 (TF_gene_ID)/' | paste - - | cut -f 2,3 > TF_A.narrowPeak.u1000_d500.annotation
+
+
 
 TF_A.narrowPeak.u1000_d500.annotation file contains TF and target gene ID for first and second columns, respectively. The two columns must be delimited by <b>TAB</b>.
 
@@ -197,12 +198,18 @@ GENE_ID_of_TF_A   AT1G02410
 
 GENE_ID_of_TF_A   AT1G02710
 
-..........
---------------------------------------------------------------------------------------------
 
-Conduct step1 and 2 for other TFs (B, C, D, ...........................).
+  3. Conduct step1 and 2 for other TFs (B, C, D, ...........................).
 
-  3. Concatenate all annotation files into one txt file.
+
+
+  4. Concatenate all annotation files into one txt file.
+  
+  
+  cat *.narrowPeak.u1000_d500.annotation > ALL_TFs.narrowPeak.u1000_d500.annotation
+  
+  
+  5. Use ALL_TFs.narrowPeak.u1000_d500.annotation for --cistrome argument.
   
 
   For other species, interaction database can be manually constructed as described above.
