@@ -78,9 +78,10 @@ Statsmodels (>= 0.11.1)
   
   # How to customize database
   
-  EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be added manually as following example.
+  EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be constructed manually as following example.
   
   <b>Step 1. Annotate distance from genes to ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
+  Prior to conduct following command line, two BED files must be sorted by "sort -k1,1 -k2,2n".
   
 	<b>command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation </b>
 
@@ -127,9 +128,7 @@ Example of TF_A.narrowPeak.u1000_d500.annotation
 	AT5G65130       AT1G03160
 
   <b>Step 3. Conduct step1 and 2 for other TFs (B, C, D, ...........................). </b>
-  Or alternatively, use GNU parallele for repeat step 1 and 2.
   
-	command line: ls *.narrowPeak | parallele "bedtools closest -a Athaliana_167_TAIR10.gene.bed -b {} -D a > {}.annotation ; awk '$17<=500 && $17>=-1000' {}.annotation | awk '$8!=-1 && $8!=-1' | cut -f 4 | sort -u | sed 's/$/\t/' | paste - - | cut -f 2,3 > TF_A.narrowPeak.u1000_d500.annotation" 
 
   <b>Step 4. Concatenate all annotation files into one txt file.</b>
   
@@ -138,5 +137,3 @@ Example of TF_A.narrowPeak.u1000_d500.annotation
   
   <b>Step 5. Use ALL_TFs.narrowPeak.u1000_d500.annotation for --cistrome argument.</b>
   
-
-  For other species, interaction database can be manually constructed as described above.
