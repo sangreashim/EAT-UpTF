@@ -83,7 +83,7 @@ Statsmodels (>= 0.11.1)
   <b>Step 1. Annotate distance from genes to ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
   Prior to conduct following command line, two BED files must be sorted by "sort -k1,1 -k2,2n".
   
-	<b>command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation </b>
+	command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation 
 
 Example of TF_A.narrowPeak.annotation
 	
@@ -105,7 +105,7 @@ Example of TF_A.narrowPeak.annotation
 Output file (TF_A.narrowPeak.annotation) contains gene IDs (fourth column) and distance from gene to peak in last column (17th column). To select genes carrying TF peaks within 1000 bp upstream and 500 bp downstream, following command line needed.
   
 
-	command line: awk '$17<=500 && $17>=-1000' TF_A.narrowPeak.annotation | awk '$8!=-1 && $8!=-1' | cut -f 4 | sort -u | sed 's/$/\tAT5G65130 (TF_gene_ID)/' | paste - - | cut -f 2,3 > TF_A.narrowPeak.u1000_d500.annotation </b>
+	command line: awk '$17<=500 && $17>=-1000' TF_A.narrowPeak.annotation | awk '$8!=-1 && $8!=-1' | cut -f 4 | sort -u | sed 's/$/\tAT5G65130 (TF_gene_ID)/' | paste - - | cut -f 2,3 > TF_A.narrowPeak.u1000_d500.annotation 
 
 TF_A.narrowPeak.u1000_d500.annotation file contains TF and target gene ID for first and second columns, respectively. The two columns must be delimited by <b>TAB</b>.
 
