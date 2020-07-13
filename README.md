@@ -163,4 +163,4 @@ Example of TF_A.narrowPeak.u1000_d500.annotation
   
   	command line example: python3 EAT-UpTF.py --cistrome ALL_TFs.narrowPeak.u1000_d500.annotation --gene_group test_set_LHY_ChIPseq.txt --model HG --post_hoc fdr_bh --alpha 0.05 --alias gene_aliases_20140331.txt
 
-  
+  If you need helps, email to sangreashim@gmail.com.
