@@ -80,7 +80,7 @@ python3 network.py --cistrome DAP_seq_default.txt --gene_group test_set_LHY_ChIP
   
   EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be added manually as following example.
   
-  <b>1. Annotate ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
+  <b>1. Annotate distance from genes to ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
   
 	<b>command line: bedtools closest -a Athaliana_167_TAIR10.gene.bed (genome_annotation_BED_file) -b TF_A.narrowPeak (ChIP-/DAP-seq_peak_BED_file) -D a > TF_A.narrowPeak.annotation </b>
 
@@ -99,55 +99,41 @@ Example of TF_A.narrowPeak.annotation
 	chr1    50075   51199   AT1G01100       .       -       chr1    21034   21235   1:21134 113     .       9.7     0.00    2.07    100     28841
 
 
-  <b>2. To annotate genes for ChIP-/DAP-seq peaks considering 1000 bp upstream and 500 bp downstream regions, following command needed. </b>
+  <b>2. Selecting genes and ChIP-/DAP-seq peaks located within 1000 bp upstream and 500 bp downstream of genes. </b>
 	
-Output file contains gene IDs (fourth column) and distance from gene to peak in last column (17th column). To select genes carrying TF peaks within 1000 bp upstream and 500 bp downstream, following command line needed.
+Output file (TF_A.narrowPeak.annotation) contains gene IDs (fourth column) and distance from gene to peak in last column (17th column). To select genes carrying TF peaks within 1000 bp upstream and 500 bp downstream, following command line needed.
   
 
 	command line: awk '$17<=500 && $17>=-1000' TF_A.narrowPeak.annotation | awk '$8!=-1 && $8!=-1' | cut -f 4 | sort -u | sed 's/$/\tAT5G65130 (TF_gene_ID)/' | paste - - | cut -f 2,3 > TF_A.narrowPeak.u1000_d500.annotation </b>
 
-
-
 TF_A.narrowPeak.u1000_d500.annotation file contains TF and target gene ID for first and second columns, respectively. The two columns must be delimited by <b>TAB</b>.
 
---------------------------- TF_A.narrowPeak.u1000_d500.annotation --------------------------
+Example of TF_A.narrowPeak.u1000_d500.annotation
 
-GENE_ID_of_TF_A   AT1G01453
-
-GENE_ID_of_TF_A   AT1G01471
-
-GENE_ID_of_TF_A   AT1G01540
-
-GENE_ID_of_TF_A   AT1G01800
-
-GENE_ID_of_TF_A   AT1G01930
-
-GENE_ID_of_TF_A   AT1G01980
-
-GENE_ID_of_TF_A   AT1G02100
-
-GENE_ID_of_TF_A   AT1G02160
-
-GENE_ID_of_TF_A   AT1G02180
-
-GENE_ID_of_TF_A   AT1G02370
-
-GENE_ID_of_TF_A   AT1G02410
-
-GENE_ID_of_TF_A   AT1G02710
+	GENE_ID_of_TF_A   AT1G01453
+	GENE_ID_of_TF_A   AT1G01471
+	GENE_ID_of_TF_A   AT1G01540
+	GENE_ID_of_TF_A   AT1G01800
+	GENE_ID_of_TF_A   AT1G01930
+	GENE_ID_of_TF_A   AT1G01980
+	GENE_ID_of_TF_A   AT1G02100
+	GENE_ID_of_TF_A   AT1G02160
+	GENE_ID_of_TF_A   AT1G02180
+	GENE_ID_of_TF_A   AT1G02370
+	GENE_ID_of_TF_A   AT1G02410
+	GENE_ID_of_TF_A   AT1G02710
 
 
-  3. Conduct step1 and 2 for other TFs (B, C, D, ...........................).
+  <b>3. Conduct step1 and 2 for other TFs (B, C, D, ...........................). </b>
 
 
 
-  4. Concatenate all annotation files into one txt file.
+  <b>4. Concatenate all annotation files into one txt file.</b>
+  
+	command line: cat *.narrowPeak.u1000_d500.annotation > ALL_TFs.narrowPeak.u1000_d500.annotation
   
   
-  cat *.narrowPeak.u1000_d500.annotation > ALL_TFs.narrowPeak.u1000_d500.annotation
-  
-  
-  5. Use ALL_TFs.narrowPeak.u1000_d500.annotation for --cistrome argument.
+  <b>5. Use ALL_TFs.narrowPeak.u1000_d500.annotation for --cistrome argument.</b>
   
 
   For other species, interaction database can be manually constructed as described above.
