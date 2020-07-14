@@ -7,7 +7,7 @@ import argparse
 
 ########################### argument parser #######################################################################
 parser  = argparse.ArgumentParser(description="Enrichment Analysis Tool for Upstream Transcription Factor of a gene set (EAT-UpTF) : conduct enrichment analysis of upstream transcription factor for a gene set of interest.")
-parser.add_argument('--cistrome', help='database file of cistrome', default='interaction_DAPseq.txt', type=argparse.FileType('r'))
+parser.add_argument('--cistrome', help='database file of cistrome', default='DAP_seq_default.txt', type=argparse.FileType('r'))
 parser.add_argument('--gene_group', help='file containing group of genes (new line delimited)', type=argparse.FileType('r'))
 parser.add_argument('--num_ref_genes','-N', help='No. of total genes in reference genome, default=27206 for Arabidopsis thaliana', default=27206.0, type=float)
 parser.add_argument('--model', help='statistical model: HG=hypergeometric test, BN=binomial test, default=HG', default='HG', type=str)
