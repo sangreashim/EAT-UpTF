@@ -5,7 +5,7 @@
 # EAT-UpTF
 Enrichment Analysis Tool for Upstream Transcription Factor of a gene set (EAT-UpTF) : conduct enrichment analysis of upstream transcription factor for a gene set of interest.
 
-Currently, EAT-UpTF officially provide database only for Arabidopsis thaliana.
+Currently, EAT-UpTF officially provides database only for Arabidopsis thaliana.
 
 # Prerequisite
 python3 (>= 3.6.8)
@@ -80,7 +80,7 @@ bedtools (should be included in default path, see https://bedtools.readthedocs.i
   
   # How to customize database
   
-  EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TF and its targets (identified by ChIP-/DAP-seq) can be constructed manually as following example.
+  EAT-UpTF conducts TF enrichment analysis based on the experimentally validated interaction between specific TF and its target genes. Interaction between TFs and their binding targets (identified by ChIP-/DAP-seq) can be constructed manually as following example.
   
   <b>Step 1. Annotate distance from genes to ChIP-/DAP-seq peaks based on the genome annotation for species of interest. </b>
   Prior to conduct following command line, two BED files must be sorted by "sort -k1,1 -k2,2n".
