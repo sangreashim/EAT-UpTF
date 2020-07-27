@@ -64,7 +64,7 @@ bedtools (should be included in default path, see https://bedtools.readthedocs.i
   	gene_aliases_20140331.txt file can be downloaded from TAIR webpage
 
 
-# Trnascriptional regulatory network construction
+# Transcriptional regulatory network construction
 
   	--cistrome 
   	database file of cistrome 
