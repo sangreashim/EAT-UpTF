@@ -21,7 +21,7 @@ for x in args.cistrome.readlines():
     else:
         cistrome_dic[tf_id].append(target_id)
 
-gene_set   = set([x.strip() for x in args.gene_group.readlines()])
+gene_set   = set([x.strip().upper() for x in args.gene_group.readlines()])
 gene_stack  = []
 args.output.write('Source'+'\t'+'InteractionType'+'\t'+'Target'+'\t'+'Val'+'\n')
 for tf in [x.strip() for x in args.TFs.readlines()]:
